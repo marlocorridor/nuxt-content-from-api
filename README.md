@@ -88,14 +88,14 @@ That's it! You can now use Nuxt Content from API in your Nuxt app ✨
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/marlocorridor/nuxt-content-from-api/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/marlocorridor/nuxt-content-from-api
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-content-from-api/latest.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-version-href]: https://npmjs.com/package/nuxt-content-from-api
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/marlocorridor/nuxt-content-from-api.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npm.chart.dev/marlocorridor/nuxt-content-from-api
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-content-from-api.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-downloads-href]: https://npm.chart.dev/nuxt-content-from-api
 
-[license-src]: https://img.shields.io/npm/l/marlocorridor/nuxt-content-from-api.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/marlocorridor/nuxt-content-from-api
+[license-src]: https://img.shields.io/npm/l/nuxt-content-from-api.svg?style=flat&colorA=020420&colorB=00DC82
+[license-href]: https://npmjs.com/package/nuxt-content-from-api
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
