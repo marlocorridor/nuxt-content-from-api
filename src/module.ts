@@ -20,44 +20,46 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options: { apiBase: string, apiPath: string, fetchOption: object, directory: string, verbose: boolean }, _nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    const url = options.apiBase + options.apiPath;
-    fetch(url, options.fetchOption)
-        .then(response => response.json())
-        .then(jsonData => {
-          console.info('Processing Content from API: Starting...');
+    nuxt.hook('build:before', () => {
+      const url = options.apiBase + options.apiPath;
+      fetch(url, options.fetchOption)
+          .then(response => response.json())
+          .then(jsonData => {
+            console.info('Processing Content from API: Starting...');
 
-          // Log response if verbose option is true
-          if (options.verbose) {
-            console.info('Logging Content from API response...');
-            console.log(jsonData);
-            console.info('End of Logging API response.');
-          }
-
-          // create directory if not exist
-          if (!existsSync(options.directory)) {
-            mkdirSync(options.directory, {
-              // supports nested directory
-              recursive: true
-            });
-          }
-
-          // write the filed
-          jsonData.forEach((entry: { slug: string; content: string | NodeJS.ArrayBufferView; }) => {
-            // skip if required data is not available
-            if (!entry.slug || !entry.content) {
-              console.error('`slug` and/or `content` not found. Skipping...');
-              return;
+            // Log response if verbose option is true
+            if (options.verbose) {
+              console.info('Logging Content from API response...');
+              console.log(jsonData);
+              console.info('End of Logging API response.');
             }
 
-            // write the file using entry.slug as name for routing
-            writeFileSync(
-              options.directory + entry.slug + '.md',
-              entry.content, { flag : 'w'}
-            )
-          });
+            // create directory if not exist
+            if (!existsSync(options.directory)) {
+              mkdirSync(options.directory, {
+                // supports nested directory
+                recursive: true
+              });
+            }
 
-          console.info('Processing Content from API: Completed!');
-        })
+            // write the filed
+            jsonData.forEach((entry: { slug: string; content: string | NodeJS.ArrayBufferView; }) => {
+              // skip if required data is not available
+              if (!entry.slug || !entry.content) {
+                console.error('`slug` and/or `content` not found. Skipping...');
+                return;
+              }
+
+              // write the file using entry.slug as name for routing
+              writeFileSync(
+                options.directory + entry.slug + '.md',
+                entry.content, { flag : 'w'}
+              )
+            });
+
+            console.info('Processing Content from API: Completed!');
+          });
+    })
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
