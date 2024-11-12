@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "nuxt-content-from-api",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Nuxt module for Nuxt Content module. This module takes your API to create MD files to implement full features of Nuxt Module .md source.",
+  "repository": "marlocorridor/nuxt-content-from-api",
   "license": "MIT",
   "type": "module",
   "exports": {
