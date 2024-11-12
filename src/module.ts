@@ -11,7 +11,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    apiBase: 'https://kamote-api.test/api',
+    apiBase: 'https://YOURHOST/api',
     apiPath: '/blog/all',
     fetchOption: {},
     directory: './content/',
