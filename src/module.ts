@@ -2,7 +2,13 @@ import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions {
+  apiBase: string,
+  apiPath: string,
+  fetchOption: object,
+  directory: string,
+  verbose: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -17,7 +23,7 @@ export default defineNuxtModule<ModuleOptions>({
     directory: './content/',
     verbose: false,
   },
-  setup(options: { apiBase: string, apiPath: string, fetchOption: object, directory: string, verbose: boolean }, nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     nuxt.hook('build:before', () => {
