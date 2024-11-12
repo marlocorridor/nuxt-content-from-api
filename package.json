@@ -2,7 +2,10 @@
   "name": "nuxt-content-from-api",
   "version": "1.0.0",
   "description": "Nuxt module for Nuxt Content module. This module takes your API to create MD files to implement full features of Nuxt Module .md source.",
-  "repository": "marlocorridor/nuxt-content-from-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marlocorridor/nuxt-content-from-api.git"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
