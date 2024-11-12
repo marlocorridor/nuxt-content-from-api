@@ -17,7 +17,7 @@ export default defineNuxtModule<ModuleOptions>({
     directory: './content/',
     verbose: false,
   },
-  setup(options: { apiBase: string, apiPath: string, fetchOption: object, directory: string, verbose: boolean }, _nuxt) {
+  setup(options: { apiBase: string, apiPath: string, fetchOption: object, directory: string, verbose: boolean }, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     nuxt.hook('build:before', () => {
