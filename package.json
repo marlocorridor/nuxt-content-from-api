@@ -1,6 +1,6 @@
 {
   "name": "nuxt-content-from-api",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Nuxt module for Nuxt Content module. This module takes your API to create MD files to implement full features of Nuxt Module .md source.",
   "repository": {
     "type": "git",
