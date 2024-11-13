@@ -1,8 +1,8 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
   nuxtContentFromApi: {
-    apiBase: 'https://YOURHOST/api',
-    apiPath: '/blog/all',
+    apiBase: 'https://mocki.io/v1',
+    apiPath: '/5902631b-810f-4696-a6f6-0f89b7f99844',
     fetchOption: {
       method: null,
       body: null,
