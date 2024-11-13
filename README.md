@@ -33,7 +33,7 @@ This module takes your API to create MD files to implement full features of Nuxt
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add marlocorridor/nuxt-content-from-api
+npx nuxi module add nuxt-content-from-api
 ```
 
 Be sure that your API response is an array or objects that has `slug` and `content` attributes.
