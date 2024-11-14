@@ -10,7 +10,10 @@ export default defineNuxtConfig({
       body: null,
       headers: null,
     },
+    slugAttribute: 'slug',
+    contentAttribute: 'content',
     directory: './content/',
+    fileExtension: '.md',
     verbose: true,
   },
 })
