@@ -52,6 +52,24 @@ Be sure that your API response is an array or objects that has `slug` and `conte
 
 That's it! You can now use Nuxt Content from API in your Nuxt app ✨
 
+## Configuration
+
+On your `nuxt.config.ts`,  define the `nuxtContentFromApi` attribute. Default values "works" with sample data.
+
+```json
+{
+  nuxtContentFromApi: {
+    apiBase: 'https://mocki.io/v1',
+    apiPath: '/5902631b-810f-4696-a6f6-0f89b7f99844',
+    fetchOption: {},
+    slugAttribute: 'slug',
+    contentAttribute: 'content',
+    directory: './content/',
+    fileExtension: '.md',
+    verbose: false,
+  }
+}
+```
 
 ## Contribution
 
