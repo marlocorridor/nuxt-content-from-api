@@ -55,13 +55,13 @@ export default defineNuxtModule<ModuleOptions>({
           }
 
           // Define keys for attribute options
-          const slug = options.slugAttribute;
-          const content = options.contentAttribute;
+          const slug = options.slugAttribute
+          const content = options.contentAttribute
 
           // Define with variable attribute. See reference: https://dev.to/jagroop2001/how-to-choose-your-type-typescript-interfaces-vs-types-51hc
           type Entry = {
-            [key: string]: string;
-          };
+            [key: string]: string
+          }
 
           // write the file
           jsonData.forEach((entry: Entry, i: number) => {
