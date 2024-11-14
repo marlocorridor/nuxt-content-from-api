@@ -17,8 +17,8 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    apiBase: 'https://YOURHOST/api',
-    apiPath: '/blog/all',
+    apiBase: 'https://mocki.io/v1',                    // 'https://YOURHOST/api',
+    apiPath: '/5902631b-810f-4696-a6f6-0f89b7f99844',  // '/blog/all'
     fetchOption: {},
     directory: './content/',
     verbose: false,
