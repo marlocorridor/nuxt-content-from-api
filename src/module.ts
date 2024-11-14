@@ -9,6 +9,7 @@ export interface ModuleOptions {
   slugAttribute: string
   contentAttribute: string
   directory: string
+  fileExtension: string
   verbose: boolean
 }
 
@@ -25,6 +26,7 @@ export default defineNuxtModule<ModuleOptions>({
     slugAttribute: 'slug',
     contentAttribute: 'content',
     directory: './content/',
+    fileExtension: '.md',
     verbose: false,
   },
   setup(options, nuxt) {
@@ -71,7 +73,7 @@ export default defineNuxtModule<ModuleOptions>({
 
             // write the file using entry.slug as name for routing
             writeFileSync(
-              options.directory + entry.slug + '.md',
+              options.directory + entry.slug + options.fileExtension,
               entry[content], { flag: 'w' },
             )
           })
