@@ -1,7 +1,7 @@
 <template>
   <main>
     <ContentDoc>
-      <template v-slot="{ doc }">
+      <template #default="{ doc }">
         {{ doc.title }}
         <ContentRenderer :value="doc">
           <template #empty>

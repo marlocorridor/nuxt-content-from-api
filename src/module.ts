@@ -51,15 +51,17 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
-    
+
     nuxt.hook('build:before', () => {
       // if enabled, continue to define hook
-      if (!options.enabled) { return }
+      if (!options.enabled) {
+        return
+      }
 
       // Process each connection setting
       options.connections.forEach((connection: Connection, connectionId: number) => {
         console.group()
-        
+
         const url = connection.apiBase + connection.apiPath
         fetch(url, connection.fetchOption)
           .then(response => response.json())
