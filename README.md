@@ -1,12 +1,3 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: Nuxt Content from API
-- Package name: nuxt-content-from-api
-- Description: My new Nuxt module
--->
-
 # Nuxt Content from API
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -24,8 +15,9 @@ This module takes your API to create MD files to implement full features of Nuxt
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- Confurable API request (base url, path, `fetch` options)
-- Configurable target directory
+- Supports multiple connection configuration
+- Configurable API request (base url, path, `fetch` options)
+- Configurable target directory for implementing [paths](https://content.nuxt.com/usage/content-directory#paths)
 - Nuxt hook on `build:before`
 
 ## Quick Setup
@@ -33,7 +25,7 @@ This module takes your API to create MD files to implement full features of Nuxt
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add marlocorridor/nuxt-content-from-api
+npx nuxi module add nuxt-content-from-api
 ```
 
 Be sure that your API response is an array or objects that has `slug` and `content` attributes.
@@ -56,17 +48,35 @@ That's it! You can now use Nuxt Content from API in your Nuxt app ✨
 
 On your `nuxt.config.ts`,  define the `nuxtContentFromApi` attribute. Default values "works" with sample data.
 
-```json
+```ts
 {
+  modules: [
+    'nuxt-content-from-api',
+  ],
   nuxtContentFromApi: {
-    apiBase: 'https://mocki.io/v1',
-    apiPath: '/5902631b-810f-4696-a6f6-0f89b7f99844',
-    fetchOption: {},
-    slugAttribute: 'slug',
-    contentAttribute: 'content',
-    directory: './content/',
-    fileExtension: '.md',
-    verbose: false,
+    connections: [
+      {
+        apiBase: 'https://mocki.io/v1', // 'https://YOURHOST/api',
+        apiPath: '/5902631b-810f-4696-a6f6-0f89b7f99844', // '/blog/all'
+        fetchOption: {},
+        slugAttribute: 'slug',
+        contentAttribute: 'content',
+        directory: './content/blog',
+        fileExtension: '.md',
+        verbose: true,
+      },
+      {
+        apiBase: 'https://mocki.io/v1',
+        apiPath: '/a630127a-8605-42be-a9a2-c595d504de73', // CSV sample
+        fetchOption: {},
+        slugAttribute: 'slug',
+        contentAttribute: 'content',
+        directory: './content/news/',
+        fileExtension: '.csv',
+        verbose: true,
+      },
+    ],
+    enabled: true,
   }
 }
 ```
