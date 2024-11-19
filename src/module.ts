@@ -60,7 +60,6 @@ export default defineNuxtModule<ModuleOptions>({
 
       // Process each connection setting
       options.connections.forEach((connection: Connection, connectionId: number) => {
-
         const url = connection.apiBase + connection.apiPath
         fetch(url, connection.fetchOption)
           .then(response => response.json())
