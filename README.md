@@ -5,8 +5,8 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Nuxt module for [Nuxt Content](https://content.nuxt.com/) module.
-This module takes your API to create MD files to implement full features of Nuxt Module `.md` source.
+Nuxt module for [Nuxt Content](https://content.nuxt.com/).
+This module takes your API config to create files to be used by Nuxt Content, thereby accessing full features of Nuxt Content module.
 
 - [✨ &nbsp;Release Notes](https://github.com/marlocorridor/nuxt-content-from-api/blob/main/CHANGELOG.md)
 - [🏀 Online playground](https://stackblitz.com/github/marlocorridor/nuxt-content-from-api?file=playground%2Fapp.vue)
@@ -29,6 +29,8 @@ npx nuxi module add nuxt-content-from-api
 ```
 
 Be sure that your API response is an array or objects that has `slug` and `content` attributes.
+Adjust options on [configuration](?tab=readme-ov-file#configuration) to use other attribute name using `slugAttribute` and `contentAttribute`. See more on [configuration](?tab=readme-ov-file#configuration) below.
+
 ```json
 [
   {
