@@ -60,7 +60,6 @@ export default defineNuxtModule<ModuleOptions>({
 
       // Process each connection setting
       options.connections.forEach((connection: Connection, connectionId: number) => {
-        console.group()
 
         const url = connection.apiBase + connection.apiPath
         fetch(url, connection.fetchOption)
@@ -109,10 +108,10 @@ export default defineNuxtModule<ModuleOptions>({
 
             console.info('Processing Content from API: Completed!')
           })
-
-        console.groupEnd()
+          .finally(() => {
+            console.info(`Processing Content from Connection ${connectionId}: DONE!`)
+          })
       }) // end of connections.forEach
-      console.info('Done pulling contents from API!')
     })
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
