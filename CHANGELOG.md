@@ -1,4 +1,8 @@
 
+## v0.1.7
+
+[compare changes](https://github.com/marlocorridor/nuxt-content-from-api/compare/v0.1.6...v0.1.7)
+
 ## v0.1.6
 
 [compare changes](https://github.com/marlocorridor/nuxt-content-from-api/compare/v0.1.5...v0.1.6)
