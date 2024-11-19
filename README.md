@@ -6,7 +6,7 @@
 [![Nuxt][nuxt-src]][nuxt-href]
 
 Nuxt module for [Nuxt Content](https://content.nuxt.com/).
-This module takes your API config to create files to be used by Nuxt Content, thereby accessing full features of Nuxt Content module.
+This module takes your API config to create files (.md, .yml, .csv, and .json) to be used by Nuxt Content, thereby accessing full features of Nuxt Content module.
 
 - [✨ &nbsp;Release Notes](https://github.com/marlocorridor/nuxt-content-from-api/blob/main/CHANGELOG.md)
 - [🏀 Online playground](https://stackblitz.com/github/marlocorridor/nuxt-content-from-api?file=playground%2Fapp.vue)
