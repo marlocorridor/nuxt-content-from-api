@@ -26,6 +26,6 @@ export default defineNuxtConfig({
         fileExtension: '.csv',
         verbose: true,
       },
-    ]
+    ],
   },
 })
